@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="click.css" />
+</head>
+
+<body>
+    <p id="compteur">0</p>
+    <button id="plus">Plus 1</button>
+    <button id="moin">moin 1</button>
+    <button id="multiplie">fois 2</button>
+    <button id="reset">reset</button>
+
+    <script>
+
+        let clickNumber = 0;
+        let compteur = document.querySelector("#compteur");
+        let plus = document.querySelector("#plus");
+        let moin = document.querySelector("#moin");
+        let multiplie = document.querySelector("#multiplie");
+        let reset = document.querySelector("#reset");
+
+        plus.addEventListener("click", function () {
+            clickNumber++;
+            compteur.innerHTML = clickNumber;
+            if (clickNumber >= 10 && clickNumber < 20) {
+                compteur.style.color = "red";
+            } else if (clickNumber >= 20) {
+                compteur.style.color = "";
+            }
+        });
+
+        moin.addEventListener("click", function () {
+            clickNumber--;
+            compteur.innerHTML = clickNumber;
+            if (clickNumber >= 10 && clickNumber < 20) {
+                compteur.style.color = "red";
+            } else if (clickNumber < 10) {
+                compteur.style.color = "";
+            }
+        });
+        multiplie.addEventListener("click", function () {
+            clickNumber *= 2;
+            compteur.innerHTML = clickNumber;
+            if (clickNumber >= 10 && clickNumber < 20) {
+                compteur.style.color = "red";
+            } else if (clickNumber < 10) {
+                compteur.style.color = "";
+            }
+        });
+        reset.addEventListener("click", function () {
+            clickNumber = 0;
+            compteur.innerHTML = clickNumber;
+
+        });
+    </script>
+</body>
+
+</html>
